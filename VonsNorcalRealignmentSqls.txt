@@ -1,0 +1,452 @@
+
+-- create backup table
+
+CREATE TABLE EMJO.POSTAL_BANNER_CODE_23JUL2015 AS (SELECT * FROM EMJO.POSTAL_BANNER_CODE);
+
+--
+-- remove postal codes from pavilions (only applicable for QA)
+
+DELETE FROM EMJO.Postal_Banner_code
+WHERE Postal_banner_cd = -10
+AND
+postal_cd IN
+(
+93755 ,                      
+93778 ,                      
+93710 ,                      
+93609 ,                      
+93709 ,                      
+93244 ,                      
+93717 ,                      
+93640 ,                      
+93262 ,                      
+93649 ,                      
+93232 ,                      
+93776 ,                      
+93673 ,                      
+93777 ,                      
+93790 ,                      
+93669 ,                      
+93651 ,                      
+93701 ,                      
+93614 ,                      
+93761 ,                      
+93706 ,                      
+93771 ,                      
+93639 ,                      
+93721 ,                      
+93626 ,                      
+93274 ,                      
+93230 ,                      
+93648 ,                      
+93750 ,                      
+93760 ,                      
+93223 ,                      
+93718 ,                      
+93277 ,                      
+93794 ,                      
+93772 ,                      
+93292 ,                      
+93661 ,                      
+93708 ,                      
+93279 ,                      
+93704 ,                      
+93647 ,                      
+93210 ,                      
+93654 ,                      
+93234 ,                      
+93282 ,                      
+93667 ,                      
+93607 ,                      
+93715 ,                      
+93650 ,                      
+93844 ,                      
+93665 ,                      
+93613 ,                      
+93633 ,                      
+93235 ,                      
+93775 ,                      
+93670 ,                      
+93656 ,                      
+93221 ,                      
+93641 ,                      
+93623 ,                      
+93628 ,                      
+93712 ,                      
+93725 ,                      
+93601 ,                      
+93631 ,                      
+93888 ,                      
+93737 ,                      
+93653 ,                      
+93786 ,                      
+93202 ,                      
+93726 ,                      
+93611 ,                      
+93664 ,                      
+93727 ,                      
+93286 ,                      
+93645 ,                      
+93724 ,                      
+93627 ,                      
+93212 ,                      
+93291 ,                      
+93246 ,                      
+93606 ,                      
+93275 ,                      
+93242 ,                      
+93740 ,                      
+93779 ,                      
+93625 ,                      
+93730 ,                      
+93290 ,                      
+93646 ,                      
+93644 ,                      
+93668 ,                      
+93714 ,                      
+93793 ,                      
+93774 ,                      
+93247 ,                      
+93707 ,                      
+93720 ,                      
+93728 ,                      
+93703 ,                      
+93636 ,                      
+93278 ,                      
+93723 ,                      
+93450 ,                      
+93237 ,                      
+93705 ,                      
+93605 ,                      
+93729 ,                      
+93266 ,                      
+93716 ,                      
+93652 ,                      
+93619 ,                      
+93773 ,                      
+93603 ,                      
+93624 ,                      
+93744 ,                      
+93608 ,                      
+93660 ,                      
+93711 ,                      
+93722 ,                      
+93764 ,                      
+93227 ,                      
+93517 ,                      
+93612 ,                      
+93630 ,                      
+93245 ,                      
+93702 ,                      
+93602 ,                      
+93616 ,                      
+89022 ,                      
+93666 ,                      
+93765 ,                      
+93615 ,                      
+93741 ,                      
+93745 ,                      
+93604 ,                      
+93662 ,                      
+93618 ,                      
+93271 ,                      
+93791 ,                      
+93675 ,                      
+93643 ,                      
+93792 ,                      
+93621 ,                      
+93747 ,                      
+93657 );
+
+COMMIT;
+
+-- update vons postal codes to norcal
+
+UPDATE EMJO.Postal_Banner_code
+set Postal_banner_cd = -16,
+LAST_UPDATE_TS = current_date
+WHERE Postal_banner_cd = -11
+AND
+postal_cd IN
+(
+93755 ,                      
+93778 ,                      
+93710 ,                      
+93609 ,                      
+93709 ,                      
+93244 ,                      
+93717 ,                      
+93640 ,                      
+93262 ,                      
+93649 ,                      
+93232 ,                      
+93776 ,                      
+93673 ,                      
+93777 ,                      
+93790 ,                      
+93669 ,                      
+93651 ,                      
+93701 ,                      
+93614 ,                      
+93761 ,                      
+93706 ,                      
+93771 ,                      
+93639 ,                      
+93721 ,                      
+93626 ,                      
+93274 ,                      
+93230 ,                      
+93648 ,                      
+93750 ,                      
+93760 ,                      
+93223 ,                      
+93718 ,                      
+93277 ,                      
+93794 ,                      
+93772 ,                      
+93292 ,                      
+93661 ,                      
+93708 ,                      
+93279 ,                      
+93704 ,                      
+93647 ,                      
+93210 ,                      
+93654 ,                      
+93234 ,                      
+93282 ,                      
+93667 ,                      
+93607 ,                      
+93715 ,                      
+93650 ,                      
+93844 ,                      
+93665 ,                      
+93613 ,                      
+93633 ,                      
+93235 ,                      
+93775 ,                      
+93670 ,                      
+93656 ,                      
+93221 ,                      
+93641 ,                      
+93623 ,                      
+93628 ,                      
+93712 ,                      
+93725 ,                      
+93601 ,                      
+93631 ,                      
+93888 ,                      
+93737 ,                      
+93653 ,                      
+93786 ,                      
+93202 ,                      
+93726 ,                      
+93611 ,                      
+93664 ,                      
+93727 ,                      
+93286 ,                      
+93645 ,                      
+93724 ,                      
+93627 ,                      
+93212 ,                      
+93291 ,                      
+93246 ,                      
+93606 ,                      
+93275 ,                      
+93242 ,                      
+93740 ,                      
+93779 ,                      
+93625 ,                      
+93730 ,                      
+93290 ,                      
+93646 ,                      
+93644 ,                      
+93668 ,                      
+93714 ,                      
+93793 ,                      
+93774 ,                      
+93247 ,                      
+93707 ,                      
+93720 ,                      
+93728 ,                      
+93703 ,                      
+93636 ,                      
+93278 ,                      
+93723 ,                      
+93450 ,                      
+93237 ,                      
+93705 ,                      
+93605 ,                      
+93729 ,                      
+93266 ,                      
+93716 ,                      
+93652 ,                      
+93619 ,                      
+93773 ,                      
+93603 ,                      
+93624 ,                      
+93744 ,                      
+93608 ,                      
+93660 ,                      
+93711 ,                      
+93722 ,                      
+93764 ,                      
+93227 ,                      
+93517 ,                      
+93612 ,                      
+93630 ,                      
+93245 ,                      
+93702 ,                      
+93602 ,                      
+93616 ,                      
+89022 ,                      
+93666 ,                      
+93765 ,                      
+93615 ,                      
+93741 ,                      
+93745 ,                      
+93604 ,                      
+93662 ,                      
+93618 ,                      
+93271 ,                      
+93791 ,                      
+93675 ,                      
+93643 ,                      
+93792 ,                      
+93621 ,                      
+93747 ,                      
+93657);
+
+COMMIT;
+
+-- removing postal codes before adding to vons
+
+DELETE 
+FROM EMJO.Postal_Banner_code
+WHERE 
+postal_cd IN (
+91399,                      
+85359,                  
+91497,                  
+85328,                  
+91990,                  
+91799,                  
+91191,                      
+85346,                  
+91363,                      
+90313,                      
+90397,                      
+90888,                      
+92709,                  
+90659,                  
+90102,                  
+92090,                      
+92292,                  
+90612,                      
+90398,                      
+93382,                      
+91388,                  
+91131,                      
+91798,                      
+93093,                      
+91797,                      
+85334,                  
+92133,                      
+91841,                  
+90845,                      
+92194,                      
+93381,                  
+92710
+);
+
+COMMIT;
+
+-- add postal codes to vons
+
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91399, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (85359, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91497, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (85328, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91990, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91799, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91191, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (85346, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91363, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (90313, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (90397, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (90888, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (92709, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (90659, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (90102, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (92090, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (92292, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (90612, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (90398, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (93382, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91388, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91131, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91798, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (93093, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91797, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (85334, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (92133, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (91841, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (90845, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (92194, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (93381, -11, current_date);
+INSERT into EMJO.POSTAL_BANNER_CODE  (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (92710, -11, current_date);
+COMMIT;
+
+-- remove postal codes before adding to norcal
+
+DELETE
+FROM EMJO.Postal_Banner_code
+WHERE postal_cd IN (
+
+97534,                     
+94101,                     
+94136,                     
+94135,                     
+94106,                     
+93780,                     
+95314,                     
+94175,                     
+97415,                     
+94625,                     
+94150,                     
+97491,                     
+94138,                     
+93784,                     
+94199,                     
+94152,                     
+94013,                     
+97444,                     
+94155          
+);
+
+COMMIT;
+
+-- add postal codes to norcal
+
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (97534, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94101, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94136, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94135, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94106, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (93780, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (95314, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94175, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (97415, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94625, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94150, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (97491, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94138, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (93784, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94199, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94152, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94013, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (97444, -16, current_date);                      
+INSERT into EMJO.POSTAL_BANNER_CODE (POSTAL_CD, POSTAL_BANNER_CD, LAST_UPDATE_TS) VALUES (94155, -16, current_date);                      
+                     
+
+COMMIT;
+
