@@ -3,7 +3,7 @@
 
 CREATE TABLE EMJO.POSTAL_BANNER_CODE_23JUL2015 AS (SELECT * FROM EMJO.POSTAL_BANNER_CODE);
 
---
+-- 11
 -- remove postal codes from pavilions (only applicable for QA)
 
 DELETE FROM EMJO.Postal_Banner_code
